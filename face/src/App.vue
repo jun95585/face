@@ -4,7 +4,6 @@
       :cameraCanvasKey="cameraCanvasKey"
       :cameraVideoKey="cameraVideoKey"
       @loadedmetadata="run"
-      @openSuccess="cameraOpened"
       @close="cameraClosed"
     />
   </div>
@@ -35,14 +34,11 @@ export default {
       })
     },
 
-    cameraOpened() {
-    },
-
     run() {
       Face.draw()
     },
     cameraClosed() {
-
+      Face.stop()
     }
 
   },
